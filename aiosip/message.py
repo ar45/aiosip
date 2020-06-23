@@ -164,7 +164,7 @@ class Message:
         if hasattr(self, '_to_details'):
             self.headers['To'] = str(self.to_details)
 
-        if hasattr(self, '_contact_details'):
+        if hasattr(self, '_contact_details') and 'Contact' not in self.headers:
             self.headers['Contact'] = str(self.contact_details)
 
         if hasattr(self, '_cseq'):
